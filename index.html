@@ -20,17 +20,23 @@
                 <h3>Форма регистрации</h3>
                 <fieldset class="form__fieldset">
                     <div class="form__field">
-                        <input class="form__input" type="text" name="name" pattern="" placeholder="Имя" required />
+                        <!-- только кириллица первая буква заглавная; возможна запись двойных имён — например Анна-Мария -->
+                        <input class="form__input" type="text" name="name" pattern="^[А-Я][а-яЁё]+(-[А-Я][а-яЁё]+){0,1}$" placeholder="Имя" minlength="2" maxlength="20" required />
                     </div>
                     <div class="form__field">
-                        <input class="form__input" type="email" name="email" pattern="" placeholder="E-Mail" required />
+                        <!-- только латиница  «собака» @ — обязательный символ; Точка . — тоже обязательный символ. Цифры, подчерк, тире — разрешённые символы-->
+                        <input class="form__input" type="email" name="email" pattern="^(\w+(-+\w+)*)@(\w+)(-+\w+)*\.(\w+)$" placeholder="E-Mail" required />
                         <span class="form__error">e-mail в формате: students-yandex@yandex.ru</span>
                     </div>
                     <div class="form__field">
-                        <input class="form__input" type="tel" name="tel" placeholder="Телефон" pattern="" minlength="18" maxlength="18"  required/>
+                        <!-- Шаблон для телефона должен находить номера в таких форматах: +7(925)900-90-90 +7(925) 900-90-90 +7 925-900-90-90 +79259009090 89259009090 Помните о пробелах — они могут встречаться в номере -->
+                        <input class="form__input" type="tel" name="tel" placeholder="Телефон" pattern="^(\+{0,1}\s*\d\s*)[\(\s-]*(\d{3})[\s\)-]*\d{3}[\s-]*\d{2}[-\s]*\d{2}$" minlength="11" maxlength="18"  required/>
                         <span class="form__error">телефон в формате: +7 (900) 000-00-00</span>
                     </div>
                     <div class="form__field">
+                        <!-- Адрес сайта долженначинаться с http:// или https://; затем www. — это необязательная группа; IP-адрес — 255.255.255.255 или доменное имя — stasbasov.ru  
+                            порт — тоже необязательная группа. Порт начинается с двоеточия, за которым идут от 2 до 5 цифр. Например: :8080; 
+                            путь — последовательность из цифр, слешей и латинских букв, на конце которого может стоять решётка #. -->
                         <input class="form__input" type="url" name="url" pattern="" placeholder="Ваш сайт" required/>
                         <span class="form__error">URL в формате: http://mysite.ru</span>
                     </div>
