@@ -34,10 +34,10 @@
                         <span class="form__error">телефон в формате: +7 (900) 000-00-00</span>
                     </div>
                     <div class="form__field">
-                        <!-- Адрес сайта долженначинаться с http:// или https://; затем www. — это необязательная группа; IP-адрес — 255.255.255.255 или доменное имя — stasbasov.ru  
+                        <!-- Адрес сайта должен начинаться с http:// или https://; затем www. — это необязательная группа; IP-адрес — 255.255.255.255 или доменное имя — stasbasov.ru  
                             порт — тоже необязательная группа. Порт начинается с двоеточия, за которым идут от 2 до 5 цифр. Например: :8080; 
                             путь — последовательность из цифр, слешей и латинских букв, на конце которого может стоять решётка #. -->
-                        <input class="form__input" type="url" name="url" pattern="" placeholder="Ваш сайт" required/>
+                        <input class="form__input" type="url" name="url" pattern="^(https{0,1}:\/\/(www\.){0,1}((\d{1,3}\.){3}\d{1,3}|\w+\.[a-z]+)(:\d{2,5}){0,1}(\/[a-z0-9]*)*(#){0,1})$" placeholder="Ваш сайт" required/>
                         <span class="form__error">URL в формате: http://mysite.ru</span>
                     </div>
                     <button class="form__button" type="submit">Отправить</button>
