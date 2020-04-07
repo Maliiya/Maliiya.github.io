@@ -30,7 +30,7 @@
                     </div>
                     <div class="form__field">
                         <!-- Шаблон для телефона должен находить номера в таких форматах: +7(925)900-90-90 +7(925) 900-90-90 +7 925-900-90-90 +79259009090 89259009090 Помните о пробелах — они могут встречаться в номере -->
-                        <input class="form__input" type="tel" name="tel" placeholder="Телефон" pattern="^(\+{0,1}\s*\d\s*)[\(\s-]*(\d{3})[\s\)-]*\d{3}[\s-]*\d{2}[-\s]*\d{2}$" minlength="11" maxlength="18"  required/>
+                        <input class="form__input" type="tel" name="tel" placeholder="Телефон" pattern="^(\+{0,1}\s*\d\s*)([\s-]*(\d{3})[\s-]*|\s*\({1}\s*(\d{3})\s*\){1}\s*)\d{3}[\s-]*\d{2}[-\s]*\d{2}$" minlength="11" maxlength="18"  required/>
                         <span class="form__error">телефон в формате: +7 (900) 000-00-00</span>
                     </div>
                     <div class="form__field">
