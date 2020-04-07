@@ -1,4 +1,4 @@
-# Maliiya.github.io/form
+# Maliiya.github.io/form/
 
 Актуальная версия - v0.0.2
 
